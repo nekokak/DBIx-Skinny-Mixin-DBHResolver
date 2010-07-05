@@ -8,19 +8,19 @@ Mock::Basic->dbh_resolver->conf(
     +{
         connect_info => +{
             MASTER => +{
-                dsn => 'dbi:SQLite:./t/db/master.db',
+                dsn => 'dbi:SQLite:./t/master.db',
             },
             MASTER1_1 => +{
-                dsn => 'dbi:SQLite:./t/db/master1_1.db',
+                dsn => 'dbi:SQLite:./t/master1_1.db',
             },
             MASTER1_2 => +{
-                dsn => 'dbi:SQLite:./t/db/master1_2.db',
+                dsn => 'dbi:SQLite:./t/master1_2.db',
             },
             MASTER2_1 => +{
-                dsn => 'dbi:SQLite:./t/db/master2_1.db',
+                dsn => 'dbi:SQLite:./t/master2_1.db',
             },
             MASTER2_2 => +{
-                dsn => 'dbi:SQLite:./t/db/master2_2.db',
+                dsn => 'dbi:SQLite:./t/master2_2.db',
             },
         },
         clusters => +{
@@ -33,15 +33,15 @@ Mock::Basic->dbh_resolver->conf(
 is_deeply [Mock::Basic->dbh_resolver->cluster('MASTER1')], [qw/MASTER1_1 MASTER1_2/];
 
 is_deeply +Mock::Basic->dbh_resolver->connect_info('MASTER'), {
-    dsn => 'dbi:SQLite:./t/db/master.db',
+    dsn => 'dbi:SQLite:./t/master.db',
 };
 
 is_deeply +Mock::Basic->dbh_resolver->connect_info('MASTER1', +{ strategy => 'Remainder', key => 1 }), {
-    dsn => 'dbi:SQLite:./t/db/master1_2.db',
+    dsn => 'dbi:SQLite:./t/master1_2.db',
 };
 
 is_deeply +Mock::Basic->dbh_resolver->connect_info('MASTER1', +{ strategy => 'Remainder', key => 2 }), {
-    dsn => 'dbi:SQLite:./t/db/master1_1.db',
+    dsn => 'dbi:SQLite:./t/master1_1.db',
 };
 
 # do connect
@@ -58,7 +58,7 @@ Mock::Basic->dbh_resolver->connect('MASTER1', +{ strategy => 'Remainder', key =>
 Mock::Basic->setup_test_db;
 ok not +Mock::Basic->single('mock_basic', {id => $id});
 
-unlink('./t/db/master1_1.db', './t/db/master1_2.db');
+unlink('./t/master1_1.db', './t/master1_2.db');
 
 done_testing;
 
