@@ -1,4 +1,5 @@
 Revision history for Perl extension DBIx::Skinny::Mixin::DBHResolver
 
-0.01    Tue Jun 29 17:35:51 2010
+0.01
+   2010-06-29
         - original version
