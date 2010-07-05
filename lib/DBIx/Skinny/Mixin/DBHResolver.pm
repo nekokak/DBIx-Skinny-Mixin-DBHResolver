@@ -69,6 +69,10 @@ Atsushi Kobayashi E<lt>nekokak _at_ gmail _dot_ comE<gt>
 
 =head1 SEE ALSO
 
+L<DBIx::Skinny>
+
+L<DBIx::DBHResolver>
+
 =head1 LICENSE
 
 This library is free software; you can redistribute it and/or modify

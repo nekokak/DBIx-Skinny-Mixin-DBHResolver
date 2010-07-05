@@ -1,5 +1,10 @@
 Revision history for Perl extension DBIx::Skinny::Mixin::DBHResolver
 
+0.02
+   2010-07-05
+        - FIXED: Makefile.PL
+        - MOD  : update pod
+
 0.01
    2010-06-29
         - original version
