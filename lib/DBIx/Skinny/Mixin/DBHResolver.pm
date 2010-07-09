@@ -1,7 +1,7 @@
 package DBIx::Skinny::Mixin::DBHResolver;
 use strict;
 use warnings;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 sub register_method {
     +{
@@ -44,7 +44,7 @@ __END__
 
 =head1 NAME
 
-DBIx::Skinny::Mixin::DBHResolver -
+DBIx::Skinny::Mixin::DBHResolver - DBIx::DBHResolver mixin for DBIx::Skinny.
 
 =head1 SYNOPSIS
 
