@@ -1,5 +1,8 @@
 Revision history for Perl extension DBIx::Skinny::Mixin::DBHResolver
 
+0.04
+   2010-07-15
+        - FIXED: test require DBD::SQLite.
 0.03
    2010-07-09
         - FIXED: Makefile.PL

@@ -4,6 +4,11 @@ use Test::More;
 use lib './t';
 use Mock::Basic;
 
+BEGIN {
+    eval "use DBD::SQLite";
+    plan skip_all => 'needs DBD::SQLite for testing' if $@;
+}
+
 Mock::Basic->dbh_resolver->conf(
     +{
         connect_info => +{
